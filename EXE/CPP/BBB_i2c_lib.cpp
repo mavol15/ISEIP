@@ -58,6 +58,17 @@ int i2cDeviceBBB::write_i2c(char data[], int bytes) {
 int init_i2c_BBB2() {
 	int file;
 
+	if ((file = open("/dev/i2c-2", O_RDWR)) < 0) {
+		//ERROR HANDLING: you can check errno to see what went wrong
+		//printf("Failed to open the i2c bus \n");
+		//exit(1);
+	}
+	return file;
+}
+
+int init_i2c_BBB1() {
+	int file;
+
 	if ((file = open("/dev/i2c-1", O_RDWR)) < 0) {
 		//ERROR HANDLING: you can check errno to see what went wrong
 		//printf("Failed to open the i2c bus \n");

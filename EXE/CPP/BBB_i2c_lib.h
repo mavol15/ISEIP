@@ -56,3 +56,7 @@ private:
 //* Init the Beaglebones I2C Bus 2 (Should only be used once)
 //* Returns the Bus data
 int init_i2c_BBB2();
+
+//* Init the Beaglebones I2C Bus 1 (Should only be used once)
+//* Returns the Bus data
+int init_i2c_BBB1();
